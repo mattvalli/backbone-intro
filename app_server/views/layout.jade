@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width', initial-scale=1.0)
+    link(rel='stylesheet', href='javascripts/lib/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="shortcut icon",href="")
+  body
+    .navbar.navbar-default.navbar-fixed-top
+        .container
+            .navbar-header
+                a.navbar-brand(href="/") Implementing Backbone.js
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+            #navbar-main.navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href='/about/') About
+    .container
+        block content
+       
+    <script type="text/template" id="beerElement">
+    a(href!='#<%= link %>')
+        img(src!='<%= img %>' alt!='<%= name %>' class="image")
+    ul
+        li.beerInfo
+            strong Brand: <%= brand %>
+        li.beerInfo
+            strong Craft Style: <%= craftStyle %>
+        li.beerInfo
+            strong Name: <%= name %>
+        li.beerInfo
+            strong Price: <%= price %>
+    </script>
+
+
+    <!-- Backbone Essentials -->
+    script(src='/javascripts/lib/jquery/jquery.min.js')
+    script(src='/javascripts/lib/underscore-min.js')
+    script(src='/javascripts/lib/backbone-min.js')
+    
+    <!-- Backbone Model -->
+    script(src="/app_server/backbone_models/model_singleBeer.js")
+    
+    <!-- Backbone Collections -->
+    script(src="/app_server/backbone_collections/collection_beers.js")
+
+    <!-- Backbone Controllers -->
+    script(src="/app_server/backbone_controllers/controller_singleBeer.js")
+    script(src="/app_server/backbone_controllers/controller_allBeers.js")
+    
+    <!-- Backbone Views -->
+    script(src="/app_server/backbone_views/view_singleBeer.js")
+    script(src="/app_server/backbone_views/view_allBeers.js")
+    
+    <!-- Backbone Routes -->
+    script(src="/app_server/backbone_routes/router.js")
+    
+    <!-- Backbone App -->
+    script(src="/app_server/beer_app.js")
+
+    <!-- Twitter Bootstrap -->
+    script(src='/javascripts/lib/bootstrap/js/bootstrap.min.js')
+    script(src="/javascripts/lib/bootstrap/js/collapse.js")
+    
+    <!-- Maps API -->
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJQHLNyEN9xvFnloI-EdrMkIm3Zb9LEf8" type="text/javascript")
